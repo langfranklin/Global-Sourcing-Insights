@@ -1,2 +1,2 @@
 # global-sourcing-insights
-Masterthesis Project: Streamlit Web-App to get insights about global sourcing news for an utility company.
+Masterthesis Project: A Proof of Concept for crawling Trending News and analyzing them with Natural Language Processing.

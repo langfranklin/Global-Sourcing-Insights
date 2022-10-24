@@ -1,0 +1,6 @@
+Pandas
+Numpy
+Nltk
+Plotly
+BeautifulSoup4
+Newspaper3k

@@ -2,5 +2,5 @@ pandas
 numpy
 nltk
 plotly
-beautifulSoup4
+beautifulsoup4
 newspaper3k

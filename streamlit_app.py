@@ -17,6 +17,7 @@ from newspaper import Config
 from datetime import datetime, timedelta
 from datetime import date
 from nltk.sentiment import SentimentIntensityAnalyzer
+nltk.download('vader_lexicon')
 
 
 load_dotenv()

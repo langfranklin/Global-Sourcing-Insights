@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 from datetime import date
 from nltk.sentiment import SentimentIntensityAnalyzer
 
+
 load_dotenv()
 
 # Voreinstellung Layout der App

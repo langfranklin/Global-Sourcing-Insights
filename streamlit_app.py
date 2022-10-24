@@ -7,7 +7,9 @@ import io
 import nltk
 import plotly.express as px
 import plotly.graph_objects as go
-from PIL import Image
+import os
+from dotenv import load_dotenv
+#from PIL import Image
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen
 from newspaper import Article
@@ -15,6 +17,8 @@ from newspaper import Config
 from datetime import datetime, timedelta
 from datetime import date
 from nltk.sentiment import SentimentIntensityAnalyzer
+
+load_dotenv()
 
 # Voreinstellung Layout der App
 st.set_page_config(page_title="Global Sourcing Insights", layout='wide')
@@ -208,7 +212,7 @@ start = end - ein_monat # Start der Zeitdatenserien gestern vor 30 Tagen
 # Kohle
 if commodity_price == "Coal" and commodity_price_button: # Wenn Coal ausgewählt und Submitbutton gedrückt:
     endpoint = 'timeseries' # API Abfrage -> Endpoint bestimmen
-    key = '3ovth1rzxvvzjogirf5v6k60bnaj72q786ej4nl7xsfh3ez2jyawvhl3wdjw' # API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
+    key = os.getenv("API_KEY") # API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
     start_day = start.strftime("%Y-%m-%d") # Starttag
     end_day = end.strftime("%Y-%m-%d") # Endtag
     currency = 'USD' # Währung
@@ -277,7 +281,7 @@ if commodity_price == "Coal" and commodity_price_button: # Wenn Coal ausgewählt
 # Nickel
 elif commodity_price == "Nickel" and commodity_price_button: # Wenn Nickel ausgewählt und Submitbutton gedrückt:
     endpoint = 'timeseries' # API Abfrage -> Endpoint bestimmen
-    key = '3ovth1rzxvvzjogirf5v6k60bnaj72q786ej4nl7xsfh3ez2jyawvhl3wdjw'# API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
+    key = os.getenv("API_KEY") # API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
     start_day = start.strftime("%Y-%m-%d") # Starttag
     end_day = end.strftime("%Y-%m-%d") # Endtag
     currency = 'USD' # Währung
@@ -346,7 +350,7 @@ elif commodity_price == "Nickel" and commodity_price_button: # Wenn Nickel ausge
 # Zink
 elif commodity_price == "Zinc" and commodity_price_button: # Wenn Zinc ausgewählt und Submitbutton gedrückt:
     endpoint = 'timeseries' # API Abfrage -> Endpoint bestimmen
-    key = '3ovth1rzxvvzjogirf5v6k60bnaj72q786ej4nl7xsfh3ez2jyawvhl3wdjw' # API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
+    key = os.getenv("API_KEY") # API-Key, nur 100 Abfragen pro Monat möglich, da kostenloser Zugang
     start_day = start.strftime("%Y-%m-%d") # Starttag
     end_day = end.strftime("%Y-%m-%d") # Endtag
     currency = 'USD' # Währung
